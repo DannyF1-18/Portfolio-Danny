@@ -1,0 +1,18 @@
+portfolio/
+│
+├── index.html
+├── operator.html
+├── passions.html
+├── competences.html
+├── projets.html
+├── parcours.html
+├── contact.html
+│
+├── CSS/
+│   └── style.css
+│
+├── JS/
+│   └── script.js
+│
+└── IMAGES/
+    └── .jpg/png

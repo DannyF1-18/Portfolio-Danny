@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Folio Danny - Développement, projets et passions">
+    <meta name="author" content="Folio Danny">
+    <title>Folio Danny | Portfolio</title>
+    <link href="../CSS/style.css" rel="stylesheet">
+    <script src="../JS/script.js" defer></script>
+    <link rel="icon" type="image/png" href="../IMAGES/favicon.png">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><span>|RED</span>EYES<span class="rouge">974|</span></div>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <ul class="menu" id="menu">
+                <li><a href="../HTML/index.html" class="actif">Accueil</a></li>
+                <li><a href="../HTML/operator.html">Opérateur</a></li>
+                <li><a href="../HTML/passions.html">Passions</a></li>
+                <li><a href="../HTML/competences.html">Compétences</a></li>
+                <li><a href="../HTML/projets.html">Projets</a></li>
+                <li><a href="../HTML/parcours.html">Parcours</a></li>
+                <li><a href="../HTML/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+ <section class="contact" method="post" action="../PHP/traitement_contact.php">
+            <h1>CONTACT ME</h1>
+            <p class="contact-description">Une question, un projet ou une proposition ?<br>
+                N'hésitez pas à me contacter.</p>
+
+            <!-- FORMULAIRE -->
+            <form id="form-contact" method="post" action="../PHP/traitement_contact.php">
+                <div class="champ">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom"  required>
+                </div>
+
+                <div class="champ">
+                    <label for="email">Email</label>
+                    <input type="email" id="email"  name="email"  placeholder="Votre adresse email" required>
+                </div>
+
+                <div class="champ">
+                    <label for="sujet">Sujet</label>
+                    <select id="sujet" name="sujet" required>
+                        <option value="">Choisissez un sujet</option>
+                        <option value="professionnel">Proposition professionnelle</option>
+                        <option value="projet">Collaboration / Projet</option>
+                        <option value="question">Question</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="champ">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Écrivez votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-bleu">Envoyer le message</button>
+                <p id="message-formulaire" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 FOLIO Danny | Portfolio</p>
+        <p>Développé en HTML, CSS et JavaScript</p>
+    </footer>
+
+</body>
+</html>

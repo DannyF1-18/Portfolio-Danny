@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Folio Danny - Développement, projets et passions">
+    <meta name="author" content="Folio Danny">
+    <title>Folio Danny | Portfolio</title>
+    <link href="../CSS/style.css" rel="stylesheet">
+    <script src="../JS/script.js" defer></script>
+    <link rel="icon" type="image/png" href="../IMAGES/favicon.png">
+</head>
+ 
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><span>|RED</span>EYES<span class="rouge">974|</span></div>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <ul class="menu" id="menu">
+                <li><a href="../HTML/index.html" class="actif">Accueil</a></li>
+                <li><a href="../HTML/operator.html">Opérateur</a></li>
+                <li><a href="../HTML/passions.html">Passions</a></li>
+                <li><a href="../HTML/competences.html">Compétences</a></li>
+                <li><a href="../HTML/projets.html">Projets</a></li>
+                <li><a href="../HTML/parcours.html">Parcours</a></li>
+                <li><a href="../HTML/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="projets">
+            <h1>MES PROJETS</h1>
+            <p class="projets-description">Découvrez les projets que j'ai réalisés durant mon apprentissage en développement.</p>
+
+            <!-- LISTE DES PROJETS -->
+            <div class="liste-projets">
+
+                <!-- PROJET 1 -->
+                <article class="projet-carte">
+                    <img src="../IMAGES/hangman.jpg" alt="Jeu du pendu Python">
+                    <div class="projet-infos">
+                        <p class="projet-numero">PROJET 01</p>
+                        <h2>HANGMAN PYTHON</h2>
+                        <p>Développement d'un jeu du pendu avec Python et Pygame.<br>
+                            Le projet comprend une interface graphique, un système de tentatives et différentes fonctionnalités de jeu.</p>
+                        <h3>Technologies utilisées</h3>
+                        <div class="projet-technologies">
+                            <span>Python</span>
+                            <span>Pygame</span>
+                        </div>
+                        <p class="projet-statut">Statut : Projet scolaire</p>
+                    </div>
+                </article>
+
+                <!-- PROJET 2 -->
+                <article class="projet-carte">
+                    <img src="../IMAGES/adyjobs.png" alt="Plateforme ADY Jobs">
+                    <div class="projet-infos">
+                        <p class="projet-numero">PROJET 02</p>
+                        <h2>ADY JOBS</h2>
+                        <p>Création d'une plateforme de recherche d'emploi en équipe.<br>
+                            Le site permet de consulter des offres d'emploi et comprend un système d'inscription, de connexion et une base de données.</p>
+                        <h3>Technologies utilisées</h3>
+                        <div class="projet-technologies">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                        <p class="projet-statut"> Statut : Projet scolaire</p>
+                    </div>
+                </article>
+
+                <!-- PROJET 3 -->
+                <article class="projet-carte">
+                    <img src="../IMAGES/web.jpg" alt="Exercices de développement web">
+                    <div class="projet-infos">
+                        <p class="projet-numero">PROJET 03</p>
+                        <h2>DEVELOPPEMENT WEB</h2>
+                        <p>Réalisation de plusieurs exercices de programmation durant ma formation.<br>
+                            Manipulation du DOM avec JavaScript, création de formulaires PHP, utilisation d'AJAX et connexion à des bases de données.</p>
+                        <h3>Technologies utilisées</h3>
+                        <div class="projet-technologies">
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>AJAX</span>
+                            <span>SQL</span>
+                        </div>
+                        <p class="projet-statut">Statut : Exercices scolaires</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="projets-contact">
+                <h2>MON TRAVAIL VOUS INTÉRESSE ?</h2>
+                <p>Vous souhaitez en savoir plus sur mes projets ou échanger avec moi ?</p>
+                <a href="../HTML/contact.html" class="btn btn-rouge">Me contacter</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 FOLIO Danny | Portfolio</p>
+        <p>Développé en HTML, CSS et JavaScript</p>
+    </footer>
+
+</body>
+</html>

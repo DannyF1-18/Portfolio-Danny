@@ -1,0 +1,1096 @@
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080b10;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #05070a;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 15px;
+    border-right: 2px solid #1677ff;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo span {
+    color: #1677ff;
+}
+
+.logo .rouge {
+    color: #ff304f;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu a {
+    display: block;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #1677ff;
+}
+
+.menu a.actif {
+    background-color: #ff304f;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* CONTENU PRINCIPAL */
+
+main {
+    margin-left: 200px;
+    padding: 40px;
+}
+
+/* ACCUEIL */
+
+.accueil {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.presentation {
+    max-width: 650px;
+}
+
+.sous-titre {
+    color: #1677ff;
+    margin-bottom: 20px;
+}
+
+.presentation h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.presentation h2 {
+    color: #ff304f;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #a3abb8;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    white-space: pre-line;
+}
+
+/* BOUTONS */
+
+.boutons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-bleu {
+    background-color: #1677ff;
+}
+
+.btn-rouge {
+    background-color: #ff304f;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* PHOTO */
+
+.photo-profil {
+    width: 280px;
+    height: 350px;
+    flex-shrink: 0;
+    border: 2px solid #1677ff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.photo-profil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MES UNIVERS */
+
+.univers {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.univers h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #a3abb8;
+    margin-bottom: 40px;
+}
+
+.cartes {
+    display: flex;
+    gap: 20px;
+}
+
+.carte {
+    background-color: #111720;
+    padding: 30px 20px;
+    border: 1px solid #293444;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.carte:hover {
+    border-color: #ff304f;
+}
+
+.icone {
+    font-size: 40px;
+}
+
+.carte h3 {
+    color: #1677ff;
+    margin: 20px 0;
+}
+
+.carte p {
+    color: #a3abb8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.carte a {
+    color: #ff304f;
+}
+
+/* PROJETS ET CONTACT */
+
+.projets-accueil,
+.contact-accueil {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.projets-accueil {
+    background-color: #111720;
+}
+
+.projets-accueil h2,
+.contact-accueil h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.projets-accueil p,
+.contact-accueil p {
+    color: #a3abb8;
+    margin-bottom: 25px;
+}
+
+/* PAGE CONTACT */
+
+.contact {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.contact h1 {
+    font-size: 40px;
+    text-align: center;
+    color: #1677ff;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    color: #a3abb8;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* FORMULAIRE */
+
+#form-contact {
+    background-color: #111720;
+    border: 1px solid #1677ff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.champ {
+    margin-bottom: 25px;
+}
+
+.champ label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #080b10;
+    border: 1px solid #293444;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+    outline: none;
+    border-color: #1677ff;
+}
+
+.champ textarea {
+    resize: vertical;
+}
+
+#form-contact button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#message-formulaire {
+    text-align: center;
+    margin-top: 20px;
+    color: #ff304f;
+}
+
+/* PAGE PASSIONS */
+
+.passions {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.passions h1 {
+    text-align: center;
+    color: #1677ff;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.passions-description {
+    text-align: center;
+    color: #a3abb8;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* BLOCS PASSIONS */
+
+.passion-bloc {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #111720;
+    border: 1px solid #293444;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 40px;
+}
+
+.passion-bloc:hover {
+    border-color: #1677ff;
+}
+
+/* IMAGES */
+
+.passion-image {
+    width: 45%;
+    flex-shrink: 0;
+}
+
+.passion-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* TEXTES */
+
+.passion-texte {
+    flex: 1;
+}
+
+.passion-texte h2 {
+    color: #ff304f;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.passion-texte h3 {
+    color: #1677ff;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.passion-texte p {
+    color: #a3abb8;
+    line-height: 1.8;
+}
+
+.passion-texte ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.passion-texte li {
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* PAGE OPERATOR */
+
+.operator {
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.operator h1 {
+    color: #1677ff;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.operator-description {
+    text-align: center;
+    color: #a3abb8;
+    margin-bottom: 50px;
+}
+
+/* FICHE OPERATEUR */
+
+.operator-fiche {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #111720;
+    border: 1px solid #1677ff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+/* PHOTO */
+
+.operator-photo {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.operator-photo img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* INFORMATIONS */
+
+.operator-infos {
+    flex: 1;
+}
+
+.operator-statut {
+    color: #40d982;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.operator-infos h2 {
+    color: #ff304f;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.operator-infos h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.operator-role {
+    color: #1677ff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.operator-details {
+    margin-bottom: 30px;
+}
+
+.operator-details p {
+    padding: 12px 0;
+    border-bottom: 1px solid #293444;
+    color: #a3abb8;
+}
+
+.operator-details strong {
+    color: white;
+}
+
+/* SECTIONS */
+
+.operator-section {
+    background-color: #111720;
+    border: 1px solid #293444;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.operator-section h2 {
+    color: #1677ff;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.operator-section p {
+    color: #a3abb8;
+    line-height: 1.8;
+}
+
+/* QUALITES */
+
+.operator-qualites {
+    display: flex;
+    gap: 20px;
+}
+
+.qualite {
+    flex: 1;
+    background-color: #080b10;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #293444;
+}
+
+.qualite:hover {
+    border-color: #ff304f;
+}
+
+.qualite h3 {
+    color: #ff304f;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* OBJECTIFS */
+
+.operator-objectifs {
+    padding-left: 25px;
+    list-style: disc;
+}
+
+.operator-objectifs li {
+    color: #a3abb8;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* BOUTONS */
+
+.operator-boutons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+/* PAGE COMPETENCES */
+
+.competences {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.competences h1 {
+    color: #1677ff;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.competences-description {
+    color: #a3abb8;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+/* SECTIONS */
+
+.competences-section {
+    background-color: #111720;
+    border: 1px solid #293444;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 35px;
+}
+
+.competences-section h2 {
+    color: #1677ff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.competences-intro {
+    color: #a3abb8;
+    margin-bottom: 30px;
+}
+
+/* CARTES COMPETENCES */
+
+.competences-cartes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.competence-carte {
+    background-color: #080b10;
+    border: 1px solid #293444;
+    border-radius: 8px;
+    padding: 25px;
+    flex: 1 1 250px;
+}
+
+.competence-carte:hover {
+    border-color: #1677ff;
+}
+
+.competence-carte h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.competence-carte p {
+    color: #a3abb8;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* NIVEAU */
+
+.niveau {
+    display: inline-block;
+    color: #1677ff;
+    border: 1px solid #1677ff;
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+/* DOMAINES */
+
+.competences-domaines {
+    display: flex;
+    gap: 20px;
+}
+
+.domaine {
+    flex: 1;
+    background-color: #080b10;
+    border: 1px solid #293444;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.domaine:hover {
+    border-color: #ff304f;
+}
+
+.domaine h3 {
+    color: #ff304f;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.domaine p {
+    color: #a3abb8;
+    line-height: 1.8;
+}
+
+/* SOFT SKILLS */
+
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.soft-skill {
+    flex: 1 1 220px;
+    background-color: #080b10;
+    padding: 20px;
+    border: 1px solid #293444;
+    border-radius: 8px;
+}
+
+.soft-skill h3 {
+    color: #ff304f;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.soft-skill p {
+    color: #a3abb8;
+    line-height: 1.6;
+}
+
+/* BOUTONS */
+
+.competences-boutons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+
+/* PAGE PROJETS */
+
+.projets {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.projets h1 {
+    color: #1677ff;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.projets-description {
+    color: #a3abb8;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+/* LISTE DES PROJETS */
+
+.liste-projets {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* CARTES PROJETS */
+
+.projet-carte {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #111720;
+    border: 1px solid #293444;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.projet-carte:hover {
+    border-color: #1677ff;
+}
+
+/* IMAGES */
+
+.projet-carte img {
+    width: 40%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* INFORMATIONS */
+
+.projet-infos {
+    flex: 1;
+}
+
+.projet-numero {
+    color: #1677ff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.projet-infos h2 {
+    color: #ff304f;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.projet-infos p {
+    color: #a3abb8;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.projet-infos h3 {
+    color: white;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+/* TECHNOLOGIES */
+
+.projet-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.projet-technologies span {
+    color: #1677ff;
+    border: 1px solid #1677ff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* STATUT */
+
+.projet-infos .projet-statut {
+    color: #ff304f;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* CONTACT */
+
+.projets-contact {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+    background-color: #111720;
+    border-radius: 10px;
+}
+
+.projets-contact h2 {
+    color: #1677ff;
+    margin-bottom: 20px;
+}
+
+.projets-contact p {
+    color: #a3abb8;
+    margin-bottom: 25px;
+}
+
+/* PAGE PARCOURS */
+
+.parcours {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.parcours h1 {
+    color: #1677ff;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.parcours-description {
+    color: #a3abb8;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+/* SECTIONS */
+
+.parcours-section {
+    margin-bottom: 50px;
+}
+
+.parcours-section h2 {
+    color: #1677ff;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+/* CHRONOLOGIE */
+
+.parcours-liste {
+    border-left: 3px solid #1677ff;
+    margin-left: 15px;
+    padding-left: 30px;
+}
+
+/* CARTES */
+
+.parcours-carte {
+    background-color: #111720;
+    border: 1px solid #293444;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.parcours-carte:hover {
+    border-color: #ff304f;
+}
+
+/* POINTS DE LA CHRONOLOGIE */
+
+.parcours-liste .parcours-carte::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: #ff304f;
+    border-radius: 50%;
+    top: 30px;
+    left: -40px;
+}
+
+/* TEXTES */
+
+.parcours-date {
+    color: #1677ff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.parcours-carte h3 {
+    color: #ff304f;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.parcours-carte h4 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.parcours-carte p {
+    color: #a3abb8;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* STATUT */
+
+.parcours-statut {
+    display: inline-block;
+    background-color: #1677ff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.parcours-statut.obtenu {
+    background-color: #ff304f;
+}
+
+/* BOUTONS */
+
+.parcours-boutons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media (max-width: 1000px) {
+
+    .projet-carte {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .projet-carte img {
+        width: 100%;
+        height: 300px;
+    }
+
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media (max-width: 1000px) {
+
+    .competences-domaines {
+        flex-direction: column;
+    }
+
+}
+
+/* FOOTER */
+
+footer {
+    margin-left: 200px;
+    padding: 25px;
+    background-color: #05070a;
+    text-align: center;
+    color: #a3abb8;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media (max-width: 1100px) {
+
+    .accueil {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .boutons {
+        justify-content: center;
+    }
+
+    .cartes {
+        flex-wrap: wrap;
+    }
+
+    .carte {
+        min-width: 220px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        width: 100%;
+        height: 70px;
+        padding: 15px 20px;
+        border-right: none;
+        border-bottom: 2px solid #1677ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #05070a;
+        padding: 20px;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .menu.ouvert {
+        display: flex;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 90px 20px 20px;
+    }
+
+    .presentation h1 {
+        font-size: 35px;
+    }
+
+    .photo-profil {
+        width: 220px;
+        height: 280px;
+    }
+
+    .cartes {
+        flex-direction: column;
+    }
+
+    footer {
+        margin-left: 0;
+    }
+}

@@ -1,50 +1,72 @@
-
-// MENU HAMBURGER
+/* MENU HAMBURGER */
 
 const boutonMenu = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 
 if (boutonMenu && menu) {
-
     boutonMenu.addEventListener("click", function () {
-
         menu.classList.toggle("ouvert");
 
         if (menu.classList.contains("ouvert")) {
-
             boutonMenu.textContent = "✕";
             boutonMenu.setAttribute("aria-expanded", "true");
             boutonMenu.setAttribute("aria-label", "Fermer le menu");
 
         } else {
-
             boutonMenu.textContent = "☰";
             boutonMenu.setAttribute("aria-expanded", "false");
             boutonMenu.setAttribute("aria-label", "Ouvrir le menu");
-
         }
-
     });
 
     // FERMER LE MENU EN CLIQUANT SUR UN LIEN
 
     const liensMenu = document.querySelectorAll(".menu a");
-
     liensMenu.forEach(function (lien) {
-
         lien.addEventListener("click", function () {
-
             menu.classList.remove("ouvert");
-
             boutonMenu.textContent = "☰";
             boutonMenu.setAttribute("aria-expanded", "false");
             boutonMenu.setAttribute("aria-label", "Ouvrir le menu");
-
         });
-
     });
-
 }
+
+
+/* PAGE ACTIVE DANS LA NAVBAR */
+// RECUPERATION DE LA PAGE ACTUELLE
+
+const pageActuelle = window.location.pathname.split("/").pop() || "index.html";
+
+// RECUPERATION DES LIENS DE LA NAVBAR
+
+const liensNavbar = document.querySelectorAll(".menu a");
+
+// VERIFICATION DE CHAQUE LIEN
+
+liensNavbar.forEach(function (lien) {
+
+    // RECUPERATION DU NOM DE LA PAGE DU LIEN
+
+    const pageLien = new URL(lien.href).pathname.split("/").pop();
+
+    // SUPPRESSION DE LA CLASSE ACTIF
+
+    lien.classList.remove("actif");
+    lien.removeAttribute("aria-current");
+
+    // VERIFICATION DE LA PAGE ACTIVE
+
+    if (pageLien === pageActuelle) {
+
+        // AJOUT DE LA CLASSE ACTIF
+
+        lien.classList.add("actif");
+        lien.setAttribute("aria-current", "page");
+
+    }
+
+});
 
 
 /* FORMULAIRE DE CONTACT */
@@ -109,7 +131,7 @@ if (formulaire) {
 
         try {
 
-            const reponse = await fetch("traitement_contact.php", {
+            const reponse = await fetch("../../Backend/traitement_contact.php", {
                 method: "POST",
                 body: donnees
             });

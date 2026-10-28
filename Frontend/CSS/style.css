@@ -59,18 +59,99 @@ ul {
     display: block;
     padding: 12px;
     border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.2s ease;
 }
 
 .menu a:hover {
     background-color: #1677ff;
 }
 
-.menu a.actif {
+.menu a.actif,
+.menu a.actif:hover {
     background-color: #ff304f;
+    color: white;
 }
 
 .menu-toggle {
     display: none;
+}
+
+/* NAVBAR TOUJOURS VISIBLE SUR MOBILE */
+
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+        height: 70px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: #05070a;
+        border-bottom: 2px solid #1677ff;
+
+        z-index: 9999;
+    }
+
+    /* BOUTON HAMBURGER */
+
+    .navbar .menu-toggle {
+        display: block;
+        flex-shrink: 0;
+
+        background: transparent;
+        border: none;
+
+        color: white;
+        font-size: 28px;
+
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    /* MENU DEROULANT */
+
+    .navbar .menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        max-height: calc(100dvh - 70px);
+        overflow-y: auto;
+
+        flex-direction: column;
+
+        background-color: #05070a;
+        padding: 20px;
+
+        z-index: 10000;
+    }
+
+    .navbar .menu.ouvert {
+        display: flex;
+    }
+
+    /* EVITER QUE LE CONTENU PASSE SOUS LA NAVBAR */
+
+    main {
+        margin-left: 0;
+        padding-top: 95px;
+    }
+
+    footer {
+        margin-left: 0;
+    }
 }
 
 /* CONTENU PRINCIPAL */
@@ -964,32 +1045,6 @@ main {
     margin: 40px 0;
 }
 
-/* RESPONSIVE TABLETTE */
-
-@media (max-width: 1000px) {
-
-    .projet-carte {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .projet-carte img {
-        width: 100%;
-        height: 300px;
-    }
-
-}
-
-/* RESPONSIVE TABLETTE */
-
-@media (max-width: 1000px) {
-
-    .competences-domaines {
-        flex-direction: column;
-    }
-
-}
-
 /* FOOTER */
 
 footer {
@@ -1004,14 +1059,59 @@ footer p {
     margin: 5px;
 }
 
-/* RESPONSIVE TABLETTE */
+/* RESPONSIVE GLOBAL */
 
-@media (max-width: 1100px) {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 0;
+    overflow-x: clip;
+}
+
+main {
+    min-width: 0;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+.presentation,
+.passion-texte,
+.operator-infos,
+.projet-infos,
+.carte,
+.competence-carte,
+.domaine,
+.soft-skill,
+.qualite {
+    min-width: 0;
+}
+
+h1, h2, h3, h4,
+p, li, a {
+    overflow-wrap: break-word;
+}
+
+/* PETITS ORDINATEURS / TABLETTES 769px à 1100px */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    main {
+        padding: 30px;
+    }
 
     .accueil {
         flex-direction: column;
         text-align: center;
-        padding: 50px 0;
+        gap: 35px;
+    }
+
+    .presentation {
+        max-width: 100%;
     }
 
     .boutons {
@@ -1023,28 +1123,71 @@ footer p {
     }
 
     .carte {
-        min-width: 220px;
+        flex: 1 1 240px;
+    }
+
+    .passion-bloc,
+    .operator-fiche,
+    .projet-carte {
+        gap: 20px;
+    }
+
+    .operator-photo img {
+        height: 350px;
+    }
+
+    .operator-infos h2 {
+        font-size: 28px;
+    }
+
+    .competences-domaines {
+        flex-direction: column;
+    }
+
+    .operator-qualites {
+        flex-wrap: wrap;
+    }
+
+    .qualite {
+        flex: 1 1 220px;
+    }
+
+    .projet-carte {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .projet-carte img {
+        width: 100%;
+        height: 280px;
     }
 }
 
-/* RESPONSIVE MOBILE */
+/* MOBILE / TABLETTES VERTICALES 768px et moins */
 
 @media (max-width: 768px) {
 
+    /* NAVBAR */
+
     .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 70px;
-        padding: 15px 20px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         border-right: none;
         border-bottom: 2px solid #1677ff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         z-index: 1000;
     }
 
     .logo {
+        font-size: 20px;
         margin-bottom: 0;
+        white-space: nowrap;
     }
 
     .menu-toggle {
@@ -1054,43 +1197,443 @@ footer p {
         color: white;
         font-size: 28px;
         cursor: pointer;
+        padding: 5px 10px;
     }
 
     .menu {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: #05070a;
-        padding: 20px;
-        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
         overflow-y: auto;
+        background-color: #05070a;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 2px solid #1677ff;
     }
 
     .menu.ouvert {
         display: flex;
     }
 
+    .menu a {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    /* CONTENU PRINCIPAL */
+
     main {
         margin-left: 0;
-        padding: 90px 20px 20px;
+        padding: 95px 20px 30px;
+        width: 100%;
+    }
+
+    /* ACCUEIL */
+
+    .accueil {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        padding: 25px 0;
+    }
+
+    .presentation {
+        width: 100%;
+        max-width: 100%;
     }
 
     .presentation h1 {
-        font-size: 35px;
+        font-size: clamp(28px, 6vw, 38px);
+        line-height: 1.2;
+    }
+
+    .presentation h2 {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 15px;
+        line-height: 1.7;
     }
 
     .photo-profil {
-        width: 220px;
-        height: 280px;
+        width: min(100%, 280px);
+        height: 340px;
+    }
+
+    .boutons {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .btn {
+        text-align: center;
+        padding: 13px 20px;
+    }
+
+    /* CARTES ACCUEIL */
+
+    .univers {
+        padding: 40px 0;
     }
 
     .cartes {
         flex-direction: column;
+        gap: 20px;
     }
+
+    .carte {
+        width: 100%;
+        min-width: 0;
+        flex: auto;
+        padding: 25px 20px;
+    }
+
+    .projets-accueil,
+    .contact-accueil {
+        padding: 40px 15px;
+    }
+
+    /* TITRES DES PAGES */
+
+    .contact h1,
+    .passions h1,
+    .operator h1,
+    .competences h1,
+    .projets h1,
+    .parcours h1 {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    /* DESCRIPTIONS */
+
+    .passions-description,
+    .operator-description,
+    .competences-description,
+    .projets-description,
+    .parcours-description {
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+
+    /* PAGE PASSIONS */
+
+    .passions {
+        margin: 20px auto;
+    }
+
+    .passion-bloc {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .passion-image {
+        width: 100%;
+    }
+
+    .passion-image img {
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+        object-fit: cover;
+    }
+
+    .passion-texte {
+        width: 100%;
+    }
+
+    .passion-texte h2 {
+        font-size: 23px;
+    }
+
+    /* PAGE OPERATEUR */
+
+    .operator {
+        margin: 20px auto;
+    }
+
+    .operator-fiche {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .operator-photo {
+        width: 100%;
+    }
+
+    .operator-photo img {
+        width: 100%;
+        height: auto;
+        max-height: 450px;
+        object-fit: cover;
+    }
+
+    .operator-infos {
+        width: 100%;
+    }
+
+    .operator-infos h2 {
+        font-size: 27px;
+    }
+
+    .operator-infos h3 {
+        font-size: 19px;
+    }
+
+    .operator-section {
+        padding: 20px;
+    }
+
+    .operator-qualites {
+        flex-direction: column;
+    }
+
+    .qualite {
+        width: 100%;
+        flex: auto;
+    }
+
+    /* PAGE COMPETENCES */
+
+    .competences {
+        margin: 20px auto;
+    }
+
+    .competences-section {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .competences-section h2 {
+        font-size: 22px;
+    }
+
+    .competences-cartes,
+    .competences-domaines,
+    .soft-skills {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .competence-carte,
+    .domaine,
+    .soft-skill {
+        width: 100%;
+        flex: auto;
+        padding: 20px;
+    }
+
+    /* PAGE PROJETS */
+
+    .projets {
+        margin: 20px auto;
+    }
+
+    .projet-carte {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .projet-carte img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .projet-infos {
+        width: 100%;
+    }
+
+    .projet-infos h2 {
+        font-size: 23px;
+    }
+
+    .projet-technologies {
+        gap: 8px;
+    }
+
+    .projets-contact {
+        padding: 35px 20px;
+        margin-top: 30px;
+    }
+
+    /* PAGE PARCOURS */
+
+    .parcours {
+        margin: 20px auto;
+    }
+
+    .parcours-section {
+        margin-bottom: 35px;
+    }
+
+    .parcours-liste {
+        margin-left: 8px;
+        padding-left: 20px;
+    }
+
+    .parcours-carte {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .parcours-liste .parcours-carte::before {
+        left: -30px;
+    }
+
+    .parcours-carte h3 {
+        font-size: 21px;
+    }
+
+    /* PAGE CONTACT */
+
+    .contact {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 0;
+    }
+
+    .contact-description {
+        margin-bottom: 30px;
+    }
+
+    #form-contact {
+        padding: 20px;
+    }
+
+    .champ input,
+    .champ select,
+    .champ textarea {
+        font-size: 16px;
+    }
+
+    /* FOOTER */
 
     footer {
         margin-left: 0;
+        padding: 25px 20px;
+        font-size: 14px;
+    }
+}
+
+/* PETITS TELEPHONES 480px et moins */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    main {
+        padding: 90px 15px 25px;
+    }
+
+    .presentation h1 {
+        font-size: 28px;
+    }
+
+    .presentation h2 {
+        font-size: 20px;
+    }
+
+    .photo-profil {
+        width: min(100%, 240px);
+        height: 300px;
+    }
+
+    .boutons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .boutons .btn {
+        width: 100%;
+    }
+
+    .univers h2,
+    .projets-accueil h2,
+    .contact-accueil h2 {
+        font-size: 25px;
+    }
+
+    .contact h1,
+    .passions h1,
+    .operator h1,
+    .competences h1,
+    .projets h1,
+    .parcours h1 {
+        font-size: 27px;
+    }
+
+    .passion-bloc,
+    .operator-fiche,
+    .operator-section,
+    .competences-section,
+    .projet-carte,
+    .parcours-carte {
+        padding: 15px;
+    }
+
+    .passion-image img,
+    .projet-carte img {
+        max-height: 250px;
+    }
+
+    .operator-photo img {
+        max-height: 350px;
+    }
+
+    .competence-carte,
+    .domaine,
+    .soft-skill,
+    .qualite {
+        padding: 15px;
+    }
+
+    .parcours-liste {
+        padding-left: 15px;
+    }
+
+    .parcours-liste .parcours-carte::before {
+        left: -25px;
+    }
+
+    #form-contact {
+        padding: 15px;
+    }
+
+    .operator-boutons,
+    .competences-boutons,
+    .parcours-boutons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .operator-boutons .btn,
+    .competences-boutons .btn,
+    .parcours-boutons .btn {
+        width: 100%;
+        text-align: center;
     }
 }
